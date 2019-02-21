@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E23F98A6221E4692006C4141 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E23F98A4221E4692006C4141 /* libmp3lame.a */; };
+		E23F98A9221E46F5006C4141 /* JKLameTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F98A8221E46F5006C4141 /* JKLameTool.m */; };
+		E23F98AC221E5843006C4141 /* JKAudioFilePathTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F98AB221E5843006C4141 /* JKAudioFilePathTool.m */; };
 		E285A879221D303300FA70DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E285A878221D303300FA70DB /* AppDelegate.m */; };
 		E285A87C221D303300FA70DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E285A87B221D303300FA70DB /* ViewController.m */; };
 		E285A87F221D303300FA70DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E285A87D221D303300FA70DB /* Main.storyboard */; };
@@ -15,6 +18,9 @@
 		E285A887221D303400FA70DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E285A886221D303400FA70DB /* main.m */; };
 		E285A891221D303400FA70DB /* JKRecorderKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E285A890221D303400FA70DB /* JKRecorderKitTests.m */; };
 		E285A89C221D303400FA70DB /* JKRecorderKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E285A89B221D303400FA70DB /* JKRecorderKitUITests.m */; };
+		E285A8B3221D350100FA70DB /* JKAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E285A8B2221D350100FA70DB /* JKAudioTool.m */; };
+		E285A8B6221D3AC800FA70DB /* JKAudioPlayerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E285A8B5221D3AC800FA70DB /* JKAudioPlayerTool.m */; };
+		E285A8BA221D495F00FA70DB /* JKAudioFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E285A8B9221D495F00FA70DB /* JKAudioFileTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E23F98A4221E4692006C4141 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		E23F98A5221E4692006C4141 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		E23F98A7221E46F5006C4141 /* JKLameTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKLameTool.h; sourceTree = "<group>"; };
+		E23F98A8221E46F5006C4141 /* JKLameTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKLameTool.m; sourceTree = "<group>"; };
+		E23F98AA221E5843006C4141 /* JKAudioFilePathTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKAudioFilePathTool.h; sourceTree = "<group>"; };
+		E23F98AB221E5843006C4141 /* JKAudioFilePathTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKAudioFilePathTool.m; sourceTree = "<group>"; };
 		E285A874221D303300FA70DB /* JKRecorderKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKRecorderKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E285A877221D303300FA70DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E285A878221D303300FA70DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +63,14 @@
 		E285A897221D303400FA70DB /* JKRecorderKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKRecorderKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E285A89B221D303400FA70DB /* JKRecorderKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKRecorderKitUITests.m; sourceTree = "<group>"; };
 		E285A89D221D303400FA70DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E285A8B0221D345A00FA70DB /* JKSingle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSingle.h; sourceTree = "<group>"; };
+		E285A8B1221D350100FA70DB /* JKAudioTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKAudioTool.h; sourceTree = "<group>"; };
+		E285A8B2221D350100FA70DB /* JKAudioTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKAudioTool.m; sourceTree = "<group>"; };
+		E285A8B4221D3AC800FA70DB /* JKAudioPlayerTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKAudioPlayerTool.h; sourceTree = "<group>"; };
+		E285A8B5221D3AC800FA70DB /* JKAudioPlayerTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKAudioPlayerTool.m; sourceTree = "<group>"; };
+		E285A8B7221D3B7500FA70DB /* JKRecorderKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKRecorderKit.h; sourceTree = "<group>"; };
+		E285A8B8221D495F00FA70DB /* JKAudioFileTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKAudioFileTool.h; sourceTree = "<group>"; };
+		E285A8B9221D495F00FA70DB /* JKAudioFileTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKAudioFileTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E23F98A6221E4692006C4141 /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +99,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E23F98A3221E4692006C4141 /* lame */ = {
+			isa = PBXGroup;
+			children = (
+				E23F98A4221E4692006C4141 /* libmp3lame.a */,
+				E23F98A5221E4692006C4141 /* lame.h */,
+				E23F98A7221E46F5006C4141 /* JKLameTool.h */,
+				E23F98A8221E46F5006C4141 /* JKLameTool.m */,
+			);
+			path = lame;
+			sourceTree = "<group>";
+		};
 		E285A86B221D303300FA70DB = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +137,7 @@
 				E285A878221D303300FA70DB /* AppDelegate.m */,
 				E285A87A221D303300FA70DB /* ViewController.h */,
 				E285A87B221D303300FA70DB /* ViewController.m */,
+				E285A8A9221D31A200FA70DB /* Class */,
 				E285A87D221D303300FA70DB /* Main.storyboard */,
 				E285A880221D303400FA70DB /* Assets.xcassets */,
 				E285A882221D303400FA70DB /* LaunchScreen.storyboard */,
@@ -130,6 +163,24 @@
 				E285A89D221D303400FA70DB /* Info.plist */,
 			);
 			path = JKRecorderKitUITests;
+			sourceTree = "<group>";
+		};
+		E285A8A9221D31A200FA70DB /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				E23F98A3221E4692006C4141 /* lame */,
+				E285A8B7221D3B7500FA70DB /* JKRecorderKit.h */,
+				E285A8B0221D345A00FA70DB /* JKSingle.h */,
+				E285A8B1221D350100FA70DB /* JKAudioTool.h */,
+				E285A8B2221D350100FA70DB /* JKAudioTool.m */,
+				E285A8B8221D495F00FA70DB /* JKAudioFileTool.h */,
+				E285A8B9221D495F00FA70DB /* JKAudioFileTool.m */,
+				E285A8B4221D3AC800FA70DB /* JKAudioPlayerTool.h */,
+				E285A8B5221D3AC800FA70DB /* JKAudioPlayerTool.m */,
+				E23F98AA221E5843006C4141 /* JKAudioFilePathTool.h */,
+				E23F98AB221E5843006C4141 /* JKAudioFilePathTool.m */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +313,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E285A8B6221D3AC800FA70DB /* JKAudioPlayerTool.m in Sources */,
 				E285A87C221D303300FA70DB /* ViewController.m in Sources */,
+				E23F98AC221E5843006C4141 /* JKAudioFilePathTool.m in Sources */,
+				E285A8B3221D350100FA70DB /* JKAudioTool.m in Sources */,
+				E285A8BA221D495F00FA70DB /* JKAudioFileTool.m in Sources */,
+				E23F98A9221E46F5006C4141 /* JKLameTool.m in Sources */,
 				E285A887221D303400FA70DB /* main.m in Sources */,
 				E285A879221D303300FA70DB /* AppDelegate.m in Sources */,
 			);
@@ -370,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -423,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -442,6 +498,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JKRecorderKit/Class/lame",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoou.joanking.JKRecorderKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -458,6 +518,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JKRecorderKit/Class/lame",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoou.joanking.JKRecorderKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
