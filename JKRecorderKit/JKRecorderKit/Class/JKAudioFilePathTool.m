@@ -11,7 +11,7 @@
 @implementation JKAudioFilePathTool
 
 #pragma mark 1、判断文件或文件夹是否存在
-+(BOOL)jk_judgeFileOrFolderExists:(NSString *)filePathName{
++ (BOOL)jk_judgeFileOrFolderExists:(NSString *)filePathName {
     
     // 长度等于0，直接返回不存在
     if (filePathName.length == 0) {
@@ -35,7 +35,7 @@
     return nil;
 }
 
-+(BOOL)jk_judgeFileExists:(NSString *)filePath{
++ (BOOL)jk_judgeFileExists:(NSString *)filePath {
     
     // 长度等于0，直接返回不存在
     if (filePath.length == 0) {
@@ -59,7 +59,7 @@
 }
 
 /**类方法创建文件夹目录 folderNmae:文件夹的名字*/
-+(NSString *)jk_createFolder:(NSString *)folderName{
++ (NSString *)jk_createFolder:(NSString *)folderName {
     
     // NSHomeDirectory()：应用程序目录， Caches、Library、Documents目录文件夹下创建文件夹(蓝色的)
     // @"Documents/JKPdf"
@@ -74,7 +74,6 @@
         // 不存在的路径才会创建
         [fileManager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
     }
-    
     return filePath;
 }
 

@@ -20,9 +20,7 @@
 jkSingleM(JKAudioPlayerTool)
 
 /** 播放歌曲 */
-- (AVAudioPlayer *)playAudioWith:(NSString *)audioPath
-{
-    
+- (AVAudioPlayer *)playAudioWith:(NSString *)audioPath {
     NSURL *url = [NSURL URLWithString:audioPath];
     if (url == nil) {
         url = [[NSBundle mainBundle] URLForResource:audioPath.lastPathComponent withExtension:nil];
@@ -44,89 +42,74 @@ jkSingleM(JKAudioPlayerTool)
 }
 
 /** 恢复当前歌曲 */
-- (void)resumeCurrentAudio
-{
+- (void)resumeCurrentAudio {
     [self.player play];
 }
 
 /** 暂停歌曲 */
-- (void)pauseCurrentAudio
-{
+- (void)pauseCurrentAudio {
     [self.player pause];
 }
 
 /** 停止歌曲 */
-- (void)stopCurrentAudio
-{
+- (void)stopCurrentAudio {
     [self.player stop];
 }
 
--(void)setVolumn:(float)volumn
-{
+- (void)setVolumn:(float)volumn {
     self.player.volume = volumn;
 }
 
--(float)volumn
-{
+- (float)volumn {
     return self.player.volume;
 }
 
--(float)progress {
+- (float)progress {
     return self.player.currentTime / self.player.duration;
 }
 
 
--(void)setEnableRate:(BOOL)enableRate{
-    
+- (void)setEnableRate:(BOOL)enableRate {
     [self.player setEnableRate:enableRate];
 }
 
--(BOOL)enableRate{
-    
+- (BOOL)enableRate {
     return self.enableRate;
 }
 
--(void)setRate:(float)rate{
-    
+- (void)setRate:(float)rate {
     [self.player setRate:rate];
 }
 
--(float)rate{
-    
+- (float)rate {
     return self.rate;
 }
 
--(void)setSpan:(float)span{
-    
+- (void)setSpan:(float)span {
     [self.player setPan:span];
 }
 
--(float)span{
-    
+- (float)span {
     return self.span;
 }
 
--(void)setNumberOfLoops:(NSInteger)numberOfLoops{
-    
+- (void)setNumberOfLoops:(NSInteger)numberOfLoops {
     [self.player setNumberOfLoops:numberOfLoops];
 }
 
--(NSInteger)numberOfLoops{
-    
+- (NSInteger)numberOfLoops {
     return self.numberOfLoops;
 }
 
 #pragma mark --- AVAudioPlayerDelegate-----
 
 #pragma mark 音频播放完成
--(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-    
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
     NSLog(@"音频播放完成");
 }
 
 #pragma mark 音频解码发生错误
-- (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error{
-    
+- (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error {
     NSLog(@"音频解码发生错误");
 }
 

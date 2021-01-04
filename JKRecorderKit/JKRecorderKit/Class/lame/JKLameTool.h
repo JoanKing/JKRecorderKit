@@ -23,7 +23,7 @@ jkSingleH(JKLameTool)
  @param success 成功的回调
  @param fail 失败的回调
  */
-+(void)audioToMP3:(NSString *)sourcePath isDeleteSourchFile: (BOOL)isDelete withSuccessBack:(void(^)(NSString *resultPath))success withFailBack:(void(^)(NSString *error))fail;
++ (void)audioToMP3:(NSString *)sourcePath isDeleteSourchFile: (BOOL)isDelete withSuccessBack:(void(^)(NSString *resultPath))success withFailBack:(void(^)(NSString *error))fail;
 
 #pragma mark caf 转 mp3 : 录音的同时转码
 /**

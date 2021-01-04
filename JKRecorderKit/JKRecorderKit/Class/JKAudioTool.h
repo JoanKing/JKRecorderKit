@@ -29,10 +29,10 @@ jkSingleH(JKAudioTool)
 @property(nonatomic,assign) NSTimeInterval audioCurrentTime;
 
 #pragma mark 开始录音
-/**
- 开始录音
- @param recordName 录音的名字
- */
+/// 开始录音
+/// @param recordName 录音的名字
+/// @param type 类型
+/// @param isConventToMp3 是否转MP3
 - (void)beginRecordWithRecordName:(NSString *)recordName withRecordType:(NSString *)type withIsConventToMp3:(BOOL)isConventToMp3;
 
 #pragma mark 结束录音

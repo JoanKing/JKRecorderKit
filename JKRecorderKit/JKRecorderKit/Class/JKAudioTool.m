@@ -11,29 +11,15 @@
 #import "JKLameTool.h"
 @interface JKAudioTool()<AVAudioRecorderDelegate>
 
-/**
- 录音对象
- */
+/// 录音对象
 @property (nonatomic, strong) AVAudioRecorder *audioRecorder;
-
-/**
- 录音成功的block
- */
+/// 录音成功的block
 @property (nonatomic, copy) AudioSuccess block;
-
-/**
- 录音文件的名字
- */
+/// 录音文件的名字
 @property (nonatomic, strong) NSString *audioFileName;
-
-/**
- 录音的类型
- */
+/// 录音的类型
 @property (nonatomic, strong) NSString *recordType;
-
-/**
- 是否边录边转mp3
- */
+/// 是否边录边转mp3
 @property (nonatomic, assign) BOOL isConventMp3;
 
 @end
@@ -42,8 +28,7 @@
 
 jkSingleM(JKAudioTool)
 
--(AVAudioRecorder *)audioRecorder
-{
+-(AVAudioRecorder *)audioRecorder {
     __weak typeof(self) weakSelf = self;
     if (!_audioRecorder) {
         
@@ -89,11 +74,13 @@ jkSingleM(JKAudioTool)
     return _audioRecorder;
 }
 
-/** 开始录音 */
-- (void)beginRecordWithRecordName: (NSString *)recordName withRecordType:(NSString *)type withIsConventToMp3:(BOOL)isConventToMp3{
-    
+
+/// 开始录音
+/// @param recordName 录制的名字
+/// @param type 类型
+/// @param isConventToMp3 是否转 MP3
+- (void)beginRecordWithRecordName: (NSString *)recordName withRecordType:(NSString *)type withIsConventToMp3:(BOOL)isConventToMp3 {
     // 正在录制就返回，防止多次点击录音
-    
     _recordType = type;
     _isConventMp3 = isConventToMp3;
     
@@ -102,67 +89,58 @@ jkSingleM(JKAudioTool)
         _audioFileName = recordName;
     }else{
         
-        _audioFileName = [NSString stringWithFormat:@"%@.%@",recordName,_recordType];
+        _audioFileName = [NSString stringWithFormat:@"%@.%@", recordName, _recordType];
     }
     
-    if (![JKAudioFilePathTool jk_judgeFileOrFolderExists:cachesRecorderPath]) {
-        
+    if (![JKAudioFilePathTool jk_judgeFileOrFolderExists: cachesRecorderPath]) {
         // 创建 /Library/Caches/JKRecorder 文件夹
-        [JKAudioFilePathTool jk_createFolder:cachesRecorderPath];
+        [JKAudioFilePathTool jk_createFolder: cachesRecorderPath];
     }
     
     // 创建录音文件存放路径
-    _recordPath = [cachesRecorderPath stringByAppendingPathComponent:_audioFileName];
+    _recordPath = [cachesRecorderPath stringByAppendingPathComponent: _audioFileName];
     
     // 准备录音
     if ([self.audioRecorder prepareToRecord]) {
-        
         // 开始录音
         [self.audioRecorder record];
-        
         // 判断是否需要边录边转 MP3
         if (isConventToMp3) {
-            
-            [[JKLameTool shareJKLameTool]audioRecodingToMP3:_recordPath isDeleteSourchFile:YES withSuccessBack:^(NSString * _Nonnull resultPath) {
+            [[JKLameTool shareJKLameTool] audioRecodingToMP3: _recordPath isDeleteSourchFile:YES withSuccessBack:^(NSString * _Nonnull resultPath) {
                 
             } withFailBack:^(NSString * _Nonnull error) {
                 
             }];
         }
-    
     }
 }
 
-/** 结束录音 */
+/// 结束录音
 - (void)endRecord {
     [self.audioRecorder stop];
-    
 }
 
-/** 暂停录音 */
+/// 暂停录音
 - (void)pauseRecord {
     [self.audioRecorder pause];
 }
 
-/** 删除录音 */
+/// 删除录音
 - (void)deleteRecord {
     [self.audioRecorder stop];
     // 删除录音之前必须先停止录音
     [self.audioRecorder deleteRecording];
 }
 
-/** 重新录音 */
+/// 重新录音
 - (void)reRecord {
     
     self.audioRecorder = nil;
     [self beginRecordWithRecordName:self.audioFileName withRecordType:self.recordType withIsConventToMp3:self.isConventMp3];
 }
 
-/**
- 更新音频测量值，注意如果要更新音频测量值必须设置meteringEnabled为YES，通过音频测量值可以即时获得音频分贝等信息
- */
--(void)updateMeters
-{
+/// 更新音频测量值，注意如果要更新音频测量值必须设置meteringEnabled为YES，通过音频测量值可以即时获得音频分贝等信息
+- (void)updateMeters {
     [self.audioRecorder updateMeters];
 }
 
@@ -171,16 +149,13 @@ jkSingleM(JKAudioTool)
  获得指定声道的分贝峰值，注意如果要获得分贝峰值必须在此之前调用updateMeters方法
  @return 指定频道的值
  */
-- (float)peakPowerForChannel0{
-    
+- (float)peakPowerForChannel0 {
     [self.audioRecorder updateMeters];
     return [self.audioRecorder peakPowerForChannel:0];
 }
 
-/**
- 当前录音的时间
- */
--(NSTimeInterval)audioCurrentTime{
+/// 当前录音的时间
+- (NSTimeInterval)audioCurrentTime{
     
     return self.audioRecorder.currentTime;
 }
@@ -191,7 +166,6 @@ jkSingleM(JKAudioTool)
         NSLog(@"----- 录音  完毕");
         
         if (self.isConventMp3) {
-            
              [[JKLameTool shareJKLameTool] sendEndRecord];
         }
     }
